@@ -1,0 +1,25 @@
+{
+  "jugadores": [
+    {
+      "posicion": "ARQUERO",
+      "nombre": "asd",
+      "cantFaltas": 10,
+      "cantTarjetas": 10,
+      "promedio": 10.0
+    },
+    {
+      "posicion": "ARQUERO",
+      "nombre": "asd",
+      "cantFaltas": 1,
+      "cantTarjetas": 3,
+      "promedio": 5.0
+    },
+    {
+      "posicion": "PUNTERO_DERECHO",
+      "nombre": "Messi",
+      "cantFaltas": 0,
+      "cantTarjetas": 10,
+      "promedio": 0.0
+    }
+  ]
+}
