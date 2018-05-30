@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import controlador.Controlador;
+import enums.Pais;
 import enums.Posicion;
 import modelo.Jugador;
 
@@ -17,6 +18,7 @@ import javax.swing.JList;
 import javax.swing.JComboBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Font;
 
 public class MainForm {
 
@@ -65,10 +67,10 @@ public class MainForm {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JList<String> list = new JList<String>();
-		list.setBounds(543, 31, 230, 500);
-		list.setListData(controlador.getNombreDeJugadores());
-		frame.getContentPane().add(list);
+		JList<String> jugadoresList = new JList<String>();
+		jugadoresList.setBounds(543, 61, 230, 470);
+		jugadoresList.setListData(controlador.getNombresDeJugadores());
+		frame.getContentPane().add(jugadoresList);
 
 		JLabel lblNombre = new JLabel("Nombre:");
 		lblNombre.setBounds(40, 31, 61, 16);
@@ -89,6 +91,14 @@ public class MainForm {
 		lblPuntaje = new JLabel("Puntaje promedio:");
 		lblPuntaje.setBounds(6, 150, 114, 26);
 		frame.getContentPane().add(lblPuntaje);
+
+		JLabel lblNacionalidad = new JLabel("Nacionalidad:");
+		lblNacionalidad.setBounds(259, 155, 100, 16);
+		frame.getContentPane().add(lblNacionalidad);
+
+		JLabel lblPosiciones = new JLabel("Posiciones:");
+		lblPosiciones.setBounds(20, 209, 81, 16);
+		frame.getContentPane().add(lblPosiciones);
 
 		nombreTxt = new JTextField();
 		nombreTxt.setBounds(117, 26, 130, 26);
@@ -115,15 +125,16 @@ public class MainForm {
 		frame.getContentPane().add(puntajeTxt);
 		puntajeTxt.setColumns(10);
 
-		JLabel lblPosicion = new JLabel("Posicion:");
-		lblPosicion.setBounds(283, 155, 61, 16);
-		frame.getContentPane().add(lblPosicion);
-
-		JComboBox<Posicion> posicionCmb = new JComboBox<Posicion>();
-		posicionCmb.setBounds(350, 151, 130, 26);
-		for (int x = 0; x < Posicion.values().length; x++)
-			posicionCmb.addItem(Posicion.values()[x]);
-		frame.getContentPane().add(posicionCmb);
+		JComboBox<Pais> nacionalidadCmb = new JComboBox<Pais>();
+		nacionalidadCmb.setBounds(350, 151, 130, 26);
+		for (int x = 0; x < Pais.values().length; x++)
+			nacionalidadCmb.addItem(Pais.values()[x]);
+		frame.getContentPane().add(nacionalidadCmb);
+				
+		JList<Posicion> posicionesList = new JList<Posicion>();
+		posicionesList.setListData(Posicion.values());
+		posicionesList.setBounds(117, 204, 130, 245);
+		frame.getContentPane().add(posicionesList);
 
 		Canvas canvas = new Canvas();
 		canvas.setBackground(new Color(204, 0, 0));
@@ -140,32 +151,42 @@ public class MainForm {
 				int tarjetas = Integer.parseInt(tarjetasTxt.getText());
 				int faltas = Integer.parseInt(faltasTxt.getText());
 				double puntaje = Double.parseDouble(puntajeTxt.getText());
-				Posicion posicion = (Posicion) posicionCmb.getSelectedItem();
-
-				nombreTxt.setText("");
-				golesTxt.setText("");
-				tarjetasTxt.setText("");
-				faltasTxt.setText("");
-				puntajeTxt.setText("");
-				posicionCmb.setSelectedItem(Posicion.ARQUERO);
+				Pais nacionalidad = (Pais) nacionalidadCmb.getSelectedItem();
 
 				jugador.setNombre(nombre);
 				jugador.setGoles(goles);
 				jugador.setCantFaltas(faltas);
 				jugador.setCantTarjetas(tarjetas);
 				jugador.setPromedio(puntaje);
-				jugador.setPosicion(posicion);
+				jugador.setPosicionPrincipal(0);
+				jugador.setNacionalidad(nacionalidad);
+				for(Posicion p : posicionesList.getSelectedValuesList())
+					jugador.agregarPosicion(p);
 
+				
+				nombreTxt.setText("");
+				golesTxt.setText("");
+				tarjetasTxt.setText("");
+				faltasTxt.setText("");
+				puntajeTxt.setText("");
+				nacionalidadCmb.setSelectedItem(Pais.ARGENTINA);
+				posicionesList.clearSelection();
+				
 				controlador.agregarJugador(jugador);
 
-				list.setListData(controlador.getNombreDeJugadores());
+				jugadoresList.setListData(controlador.getNombresDeJugadores());
 			}
 		});
-		btnAgregar.setBounds(130, 217, 117, 29);
+		btnAgregar.setBounds(363, 420, 117, 29);
 		frame.getContentPane().add(btnAgregar);
 
 		JButton btnCalcular = new JButton("Calcular");
 		btnCalcular.setBounds(803, 26, 117, 29);
 		frame.getContentPane().add(btnCalcular);
+
+		JLabel lblJugadoresCargados = new JLabel("Jugadores cargados");
+		lblJugadoresCargados.setFont(new Font("Helvetica", Font.BOLD, 20));
+		lblJugadoresCargados.setBounds(543, 26, 230, 23);
+		frame.getContentPane().add(lblJugadoresCargados);
 	}
 }

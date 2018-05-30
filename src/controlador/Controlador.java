@@ -13,11 +13,11 @@ public class Controlador {
 		jugadores = j.levantarDatos();
 	}
 
-	public String[] getNombreDeJugadores(){
+	public String[] getNombresDeJugadores(){
 		String[] ret = new String[jugadores.size()];
 		int x = 0;
 		for(Jugador j : jugadores){
-			ret[x] = j.getPosicion().getId() + "-" + j.getNombre();
+			ret[x] = j.getPosicionPrincipal().getId() + "-" + j.getNombre();
 			x++;
 		}
 

@@ -1,21 +1,23 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import enums.Pais;
 import enums.Posicion;
 
 public class Jugador {
-	private Posicion posicion;
+	private List<Posicion> posiciones;
 	private int goles;
 	private String nombre;
 	private int cantFaltas;
 	private int cantTarjetas;
+	private Pais nacionalidad;
 	private double promedio;
-
-	public Posicion getPosicion() {
-		return posicion;
-	}
-
-	public void setPosicion(Posicion posicion) {
-		this.posicion = posicion;
+	private int posicionPrincipal = 0;
+	
+	public Jugador(){
+		posiciones = new ArrayList<Posicion>();
 	}
 
 	public String getNombre() {
@@ -51,7 +53,7 @@ public class Jugador {
 	}
 
 	public String toString() {
-		return posicion.getId() + "-" + nombre;
+		return posiciones.get(0).getId() + "-" + nombre;
 	}
 
 	public int getGoles() {
@@ -71,6 +73,34 @@ public class Jugador {
 		ret -= cantTarjetas;
 		ret += promedio;
 		return ret;
+	}
+
+	public void agregarPosicion(Posicion posicion) {
+		posiciones.add(posicion);
+	}
+
+	public void borrarPosicion(Posicion posicion) {
+		posiciones.remove(posicion);
+	}
+
+	public boolean juegaDe(Posicion posicionActual) {
+		return posiciones.contains(posicionActual);
+	}
+
+	public void setPosicionPrincipal(int pos) {
+		posicionPrincipal = pos;
+	}
+
+	public Posicion getPosicionPrincipal() {
+		return posiciones.get(posicionPrincipal);
+	}
+
+	public Pais getNacionalidad() {
+		return nacionalidad;
+	}
+
+	public void setNacionalidad(Pais nacionalidad) {
+		this.nacionalidad = nacionalidad;
 	}
 
 }

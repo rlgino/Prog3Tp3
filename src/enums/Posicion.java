@@ -40,4 +40,11 @@ public enum Posicion {
 	public String toString(){
 		return id + "-" + posicion;
 	}
+
+	public static Posicion valueOf(Posicion posicion) {
+		for(Posicion p : values()){
+			if(p.getId() == posicion.getId()) return p;
+		}
+		return null;
+	}
 }

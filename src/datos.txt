@@ -1,25 +1,186 @@
 {
   "jugadores": [
     {
-      "posicion": "ARQUERO",
-      "nombre": "asd",
-      "cantFaltas": 10,
-      "cantTarjetas": 10,
-      "promedio": 10.0
+      "posiciones": [
+        "ARQUERO"
+      ],
+      "goles": -5,
+      "nombre": "Manuel Neuer",
+      "cantFaltas": 2,
+      "cantTarjetas": 0,
+      "nacionalidad": "ALEMANIA",
+      "promedio": 8.0,
+      "posicionPrincipal": 0
     },
     {
-      "posicion": "ARQUERO",
-      "nombre": "asd",
-      "cantFaltas": 1,
+      "posiciones": [
+        "LATERAL_DERECHO",
+        "VOLANTE_CENTRAL",
+        "VOLANTE_DERECHO"
+      ],
+      "goles": 0,
+      "nombre": "Phillip Lahm",
+      "cantFaltas": 9,
+      "cantTarjetas": 1,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 9.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "PRIMER_CENTRAL",
+        "SEGUNDO_CENTRAL"
+      ],
+      "goles": 0,
+      "nombre": "Garay",
+      "cantFaltas": 5,
+      "cantTarjetas": 1,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 8.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "PRIMER_CENTRAL",
+        "SEGUNDO_CENTRAL",
+        "VOLANTE_CENTRAL"
+      ],
+      "goles": 2,
+      "nombre": "David Luiz",
+      "cantFaltas": 4,
       "cantTarjetas": 3,
-      "promedio": 5.0
+      "nacionalidad": "BRASIL",
+      "promedio": 7.0,
+      "posicionPrincipal": 0
     },
     {
-      "posicion": "PUNTERO_DERECHO",
-      "nombre": "Messi",
+      "posiciones": [
+        "SEGUNDO_CENTRAL",
+        "LATERAL_IZQUIERDO"
+      ],
+      "goles": 1,
+      "nombre": "Rojo",
+      "cantFaltas": 5,
+      "cantTarjetas": 1,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 8.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "VOLANTE_CENTRAL",
+        "VOLANTE_DERECHO"
+      ],
+      "goles": 2,
+      "nombre": "BASTIAN SCHWEINSTEIGER ",
+      "cantFaltas": 3,
+      "cantTarjetas": 0,
+      "nacionalidad": "ALEMANIA",
+      "promedio": 9.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "VOLANTE_CENTRAL"
+      ],
+      "goles": 0,
+      "nombre": "Mascherano",
+      "cantFaltas": 3,
+      "cantTarjetas": 1,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 8.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "VOLANTE_IZQUIERDO",
+        "VOLANTE_CENTRAL",
+        "VOLANTE_DERECHO"
+      ],
+      "goles": 3,
+      "nombre": "TONI KROOS",
+      "cantFaltas": 1,
+      "cantTarjetas": 1,
+      "nacionalidad": "ALEMANIA",
+      "promedio": 9.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "PUNTERO_IZQUIERDO",
+        "PUNTERO_DERECHO"
+      ],
+      "goles": 6,
+      "nombre": "JAMES RODRIGUEZ ",
       "cantFaltas": 0,
-      "cantTarjetas": 10,
-      "promedio": 0.0
+      "cantTarjetas": 1,
+      "nacionalidad": "COLOMBIA",
+      "promedio": 8.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "PRIMER_CENTRAL",
+        "SEGUNDO_CENTRAL"
+      ],
+      "goles": 0,
+      "nombre": "RON VLAAR ",
+      "cantFaltas": 3,
+      "cantTarjetas": 0,
+      "nacionalidad": "HOLANDA",
+      "promedio": 9.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "PUNTERO_IZQUIERDO",
+        "CENTRO_DELANTERO",
+        "PUNTERO_DERECHO"
+      ],
+      "goles": 5,
+      "nombre": "THOMAS MÜLLER",
+      "cantFaltas": 2,
+      "cantTarjetas": 0,
+      "nacionalidad": "ALEMANIA",
+      "promedio": 10.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "PUNTERO_DERECHO"
+      ],
+      "goles": 4,
+      "nombre": "Lionel Messi",
+      "cantFaltas": 0,
+      "cantTarjetas": 0,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 9.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "PUNTERO_IZQUIERDO",
+        "CENTRO_DELANTERO"
+      ],
+      "goles": 4,
+      "nombre": "Neymar",
+      "cantFaltas": 3,
+      "cantTarjetas": 0,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 8.0,
+      "posicionPrincipal": 0
+    },
+    {
+      "posiciones": [
+        "ARQUERO"
+      ],
+      "goles": -6,
+      "nombre": "Cillessen",
+      "cantFaltas": 1,
+      "cantTarjetas": 0,
+      "nacionalidad": "HOLANDA",
+      "promedio": 7.0,
+      "posicionPrincipal": 0
     }
   ]
 }
