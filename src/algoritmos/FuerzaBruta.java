@@ -1,6 +1,7 @@
 package algoritmos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import enums.Posicion;
@@ -8,23 +9,19 @@ import modelo.Jugador;
 
 public class FuerzaBruta {
 	
-	public List<Jugador> equipoIdeal(List<Jugador> jugadores){
+	public static List<Jugador> resolver(List<Jugador> jugadores) {
 		
 		List<Jugador> equipoIdeal = new ArrayList<Jugador>();
+				
+		Collections.sort(jugadores);
 		
 		for(Posicion posicionActual : Posicion.values())
 		{
-			Jugador jugadorMax = new Jugador();
-			jugadorMax.setNombre("Default");
-			boolean primerPasada = true;
-			for(Jugador jugador : jugadores) if(jugador.juegaDe(posicionActual)){
-				if(primerPasada || jugador.getCoeficiente() < jugadorMax.getCoeficiente()){
-					jugadorMax = jugador;
-				}
-			}
-			equipoIdeal.add(jugadorMax);
+			List<Jugador> jugPorPosicion = new ArrayList<Jugador>();
+			jugadores.stream().filter(j -> j.juegaDe(posicionActual)).forEach(j -> jugPorPosicion.add(j));
+			System.out.println(jugPorPosicion.get(0).getNombre());
 		}
-		return equipoIdeal;
+		return equipoIdeal;		
 	}
 	
 }

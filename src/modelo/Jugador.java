@@ -6,7 +6,7 @@ import java.util.List;
 import enums.Pais;
 import enums.Posicion;
 
-public class Jugador {
+public class Jugador implements Comparable<Jugador> {
 	private List<Posicion> posiciones;
 	private int goles;
 	private String nombre;
@@ -15,8 +15,8 @@ public class Jugador {
 	private Pais nacionalidad;
 	private double promedio;
 	private int posicionPrincipal = 0;
-	
-	public Jugador(){
+
+	public Jugador() {
 		posiciones = new ArrayList<Posicion>();
 	}
 
@@ -101,6 +101,16 @@ public class Jugador {
 
 	public void setNacionalidad(Pais nacionalidad) {
 		this.nacionalidad = nacionalidad;
+	}
+
+	@Override
+	public int compareTo(Jugador otro) {
+		if (this.getCoeficiente() > otro.getCoeficiente())
+			return 1;
+		if (this.getCoeficiente() < otro.getCoeficiente())
+			return -1;
+
+		return 0;
 	}
 
 }

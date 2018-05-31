@@ -1,7 +1,11 @@
 package controlador;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import con.instancia.Conjunto;
+import con.instancia.Instancia;
+import con.instancia.SolverGoloso;
 import modelo.Jugador;
 
 public class Controlador {
@@ -32,6 +36,11 @@ public class Controlador {
 	private void guardarJugadores() {
 		Jugadores j = new Jugadores();
 		j.persistirDatos(jugadores);		
+	}
+
+	public void seleccionarEquipo() {
+		SolverGoloso solver = new SolverGoloso(new Instancia((ArrayList<Jugador>) jugadores));
+		Conjunto sol = solver.resolver();
 	}
 
 }

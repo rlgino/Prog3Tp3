@@ -19,6 +19,8 @@ import javax.swing.JComboBox;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainForm {
 
@@ -181,6 +183,11 @@ public class MainForm {
 		frame.getContentPane().add(btnAgregar);
 
 		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.seleccionarEquipo();
+			}
+		});
 		btnCalcular.setBounds(803, 26, 117, 29);
 		frame.getContentPane().add(btnCalcular);
 
