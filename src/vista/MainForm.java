@@ -1,26 +1,25 @@
 package vista;
 
+import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JTextField;
 
 import controlador.Controlador;
 import enums.Pais;
 import enums.Posicion;
 import modelo.Jugador;
-
-import javax.swing.JButton;
-import java.awt.Canvas;
-import java.awt.Color;
-import javax.swing.JList;
-import javax.swing.JComboBox;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class MainForm {
 
@@ -185,7 +184,8 @@ public class MainForm {
 		JButton btnCalcular = new JButton("Calcular");
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controlador.seleccionarEquipo();
+				EquipoIdealForm form = new EquipoIdealForm(controlador.seleccionarEquipo());
+				form.cargar();
 			}
 		});
 		btnCalcular.setBounds(803, 26, 117, 29);

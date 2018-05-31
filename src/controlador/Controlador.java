@@ -38,9 +38,10 @@ public class Controlador {
 		j.persistirDatos(jugadores);		
 	}
 
-	public void seleccionarEquipo() {
+	public String[] seleccionarEquipo() {
 		SolverGoloso solver = new SolverGoloso(new Instancia((ArrayList<Jugador>) jugadores));
 		Conjunto sol = solver.resolver();
+		return sol.getNombreDeJugadores();
 	}
 
 }

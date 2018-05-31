@@ -37,15 +37,15 @@ public class SolverGoloso {
 		if(ret.contiene(j)) return false;
 		if(ret.esLimiteAmarilla()){
 			System.out.println("Limite de amarillas");
-			return false;
+//			return false;
 		}
 		if(ret.esCantSinGoles()){
 			System.out.println("Limite de sin goles");
-			return false;
+//			return false;
 		}
 		if(ret.esLimitePorPais(j.getNacionalidad().getId())) {
 			System.out.println("Limite por pais");
-			return false;
+//			return false;
 		}
 		return true;
 	}

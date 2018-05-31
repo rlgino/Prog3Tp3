@@ -40,6 +40,7 @@ public class Conjunto {
 	public void agregar(Jugador actual) {
 		if(actual.getGoles() == 0) cantSinGoles++;
 		if(actual.getCantTarjetas() > 0) cantAmarilla++;
+		contPais[actual.getNacionalidad().getId()]++;
 		jugadores.add(actual);
 		System.out.println(actual.getNombre());
 	}
@@ -67,5 +68,12 @@ public class Conjunto {
 
 	public boolean esLimitePorPais(int id) {
 		return contPais[id] == LIMITE_PAIS;
+	}
+
+	public String[] getNombreDeJugadores() {
+		String[] nombre = new String[jugadores.size()];
+		for(int x = 0; x < jugadores.size() ; x++)
+			nombre[x] = jugadores.get(x).getNombre();
+		return nombre;
 	}
 }
