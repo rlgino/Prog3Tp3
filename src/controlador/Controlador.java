@@ -9,39 +9,52 @@ import con.instancia.SolverGoloso;
 import modelo.Jugador;
 
 public class Controlador {
+	//----------------Variables------------------
 	private List<Jugador> jugadores;
-	final static String PATH = "./src/datos.txt";
+	//----------------Constantes-----------------
+	static String PATH = "./src/datos.txt";
 	
+	//----------------Contructores---------------
 	public Controlador(){
 		Jugadores j = new Jugadores();
 		jugadores = j.levantarDatos();
 	}
 
-	public String[] getNombresDeJugadores(){
-		String[] ret = new String[jugadores.size()];
+	//----------------Getters--------------------
+	public Jugador[] obtenerJugadores(){
+		Jugador[] ret = new Jugador[jugadores.size()];
 		int x = 0;
 		for(Jugador j : jugadores){
-			ret[x] = j.getPosicionPrincipal().getId() + "-" + j.getNombre();
+			ret[x] = j;
 			x++;
 		}
 
 		return ret;
 	}
 
-	public void agregarJugador(Jugador j){
-		jugadores.add(j);
-		guardarJugadores();
-	}
-
 	private void guardarJugadores() {
 		Jugadores j = new Jugadores();
 		j.persistirDatos(jugadores);		
 	}
+	
+	//----------------Setters------------------
+	public void agregarJugador(Jugador j){
+		if(jugadores.contains(j))jugadores.remove(j);
+		jugadores.add(j);
+		guardarJugadores();
+	}
 
-	public String[] seleccionarEquipo() {
+	public Conjunto seleccionarEquipo() {
 		SolverGoloso solver = new SolverGoloso(new Instancia((ArrayList<Jugador>) jugadores));
 		Conjunto sol = solver.resolver();
-		return sol.getNombreDeJugadores();
+		return sol;
+	}
+
+	public Jugador obtenerJugador(String nombre) {
+		for(Jugador j : jugadores)
+			if(j.getNombre().equals(nombre))
+				return j;
+		return null;
 	}
 
 }

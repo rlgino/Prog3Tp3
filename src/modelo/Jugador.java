@@ -14,7 +14,6 @@ public class Jugador implements Comparable<Jugador> {
 	private int cantTarjetas;
 	private Pais nacionalidad;
 	private double promedio;
-	private int posicionPrincipal = 0;
 
 	public Jugador() {
 		posiciones = new ArrayList<Posicion>();
@@ -53,7 +52,7 @@ public class Jugador implements Comparable<Jugador> {
 	}
 
 	public String toString() {
-		return posiciones.get(0).getId() + "-" + nombre;
+		return nombre + " - " + getCoeficiente();
 	}
 
 	public int getGoles() {
@@ -87,14 +86,6 @@ public class Jugador implements Comparable<Jugador> {
 		return posiciones.contains(posicionActual);
 	}
 
-	public void setPosicionPrincipal(int pos) {
-		posicionPrincipal = pos;
-	}
-
-	public Posicion getPosicionPrincipal() {
-		return posiciones.get(posicionPrincipal);
-	}
-
 	public Pais getNacionalidad() {
 		return nacionalidad;
 	}
@@ -105,12 +96,24 @@ public class Jugador implements Comparable<Jugador> {
 
 	@Override
 	public int compareTo(Jugador otro) {
-		if (this.getCoeficiente() > otro.getCoeficiente())
-			return 1;
 		if (this.getCoeficiente() < otro.getCoeficiente())
+			return 1;
+		if (this.getCoeficiente() > otro.getCoeficiente())
 			return -1;
 
 		return 0;
+	}
+
+	public List<Posicion> getPosiciones() {
+		return 	posiciones;	
+	}
+	
+	@Override
+	public boolean equals(Object o){
+		if(!(o instanceof Jugador)) return false;
+		Jugador otro = (Jugador) o;
+		if(otro.getNombre().equals(getNombre())) return true;
+		return false;
 	}
 
 }

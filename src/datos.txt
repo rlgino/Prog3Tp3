@@ -9,8 +9,7 @@
       "cantFaltas": 2,
       "cantTarjetas": 0,
       "nacionalidad": "ALEMANIA",
-      "promedio": 8.0,
-      "posicionPrincipal": 0
+      "promedio": 8.0
     },
     {
       "posiciones": [
@@ -22,9 +21,8 @@
       "nombre": "Phillip Lahm",
       "cantFaltas": 9,
       "cantTarjetas": 1,
-      "nacionalidad": "ARGENTINA",
-      "promedio": 9.0,
-      "posicionPrincipal": 0
+      "nacionalidad": "ALEMANIA",
+      "promedio": 9.0
     },
     {
       "posiciones": [
@@ -36,8 +34,7 @@
       "cantFaltas": 5,
       "cantTarjetas": 1,
       "nacionalidad": "ARGENTINA",
-      "promedio": 8.0,
-      "posicionPrincipal": 0
+      "promedio": 8.0
     },
     {
       "posiciones": [
@@ -50,8 +47,7 @@
       "cantFaltas": 4,
       "cantTarjetas": 3,
       "nacionalidad": "BRASIL",
-      "promedio": 7.0,
-      "posicionPrincipal": 0
+      "promedio": 7.0
     },
     {
       "posiciones": [
@@ -63,8 +59,7 @@
       "cantFaltas": 5,
       "cantTarjetas": 1,
       "nacionalidad": "ARGENTINA",
-      "promedio": 8.0,
-      "posicionPrincipal": 0
+      "promedio": 8.0
     },
     {
       "posiciones": [
@@ -76,8 +71,7 @@
       "cantFaltas": 3,
       "cantTarjetas": 0,
       "nacionalidad": "ALEMANIA",
-      "promedio": 9.0,
-      "posicionPrincipal": 0
+      "promedio": 9.0
     },
     {
       "posiciones": [
@@ -88,8 +82,7 @@
       "cantFaltas": 3,
       "cantTarjetas": 1,
       "nacionalidad": "ARGENTINA",
-      "promedio": 8.0,
-      "posicionPrincipal": 0
+      "promedio": 8.0
     },
     {
       "posiciones": [
@@ -102,8 +95,7 @@
       "cantFaltas": 1,
       "cantTarjetas": 1,
       "nacionalidad": "ALEMANIA",
-      "promedio": 9.0,
-      "posicionPrincipal": 0
+      "promedio": 9.0
     },
     {
       "posiciones": [
@@ -115,8 +107,7 @@
       "cantFaltas": 0,
       "cantTarjetas": 1,
       "nacionalidad": "COLOMBIA",
-      "promedio": 8.0,
-      "posicionPrincipal": 0
+      "promedio": 8.0
     },
     {
       "posiciones": [
@@ -128,8 +119,7 @@
       "cantFaltas": 3,
       "cantTarjetas": 0,
       "nacionalidad": "HOLANDA",
-      "promedio": 9.0,
-      "posicionPrincipal": 0
+      "promedio": 9.0
     },
     {
       "posiciones": [
@@ -142,8 +132,7 @@
       "cantFaltas": 2,
       "cantTarjetas": 0,
       "nacionalidad": "ALEMANIA",
-      "promedio": 10.0,
-      "posicionPrincipal": 0
+      "promedio": 10.0
     },
     {
       "posiciones": [
@@ -154,8 +143,7 @@
       "cantFaltas": 0,
       "cantTarjetas": 0,
       "nacionalidad": "ARGENTINA",
-      "promedio": 9.0,
-      "posicionPrincipal": 0
+      "promedio": 9.0
     },
     {
       "posiciones": [
@@ -167,8 +155,29 @@
       "cantFaltas": 3,
       "cantTarjetas": 0,
       "nacionalidad": "ARGENTINA",
-      "promedio": 8.0,
-      "posicionPrincipal": 0
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
+        "CENTRO_DELANTERO"
+      ],
+      "goles": 9,
+      "nombre": "Benzema",
+      "cantFaltas": 0,
+      "cantTarjetas": 1,
+      "nacionalidad": "FRANCIA",
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
+        "LATERAL_IZQUIERDO"
+        ],
+      "goles": 3,
+      "nombre": "Marcelo",
+      "cantFaltas": 1,
+      "cantTarjetas": 1,
+      "nacionalidad": "BRASIL",
+      "promedio": 8.0
     },
     {
       "posiciones": [
@@ -176,11 +185,10 @@
       ],
       "goles": -6,
       "nombre": "Cillessen",
-      "cantFaltas": 1,
+      "cantFaltas": 0,
       "cantTarjetas": 0,
       "nacionalidad": "HOLANDA",
-      "promedio": 7.0,
-      "posicionPrincipal": 0
+      "promedio": 7.0
     }
   ]
 }

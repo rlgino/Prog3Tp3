@@ -15,13 +15,25 @@ public class FuerzaBruta {
 				
 		Collections.sort(jugadores);
 		
-		for(Posicion posicionActual : Posicion.values())
+//		for(Posicion posicionActual : Posicion.values())
+		for(int x = 0; x < Posicion.values().length ; x++)
 		{
+			Posicion posicionActual = Posicion.values()[x]; 
+			List<Jugador> jugPorPosicion = new ArrayList<Jugador>();
+			jugadores.stream().filter(j -> j.juegaDe(posicionActual)).forEach(j -> jugPorPosicion.add(j));
+			System.out.println(jugPorPosicion.get(0).getNombre());
+		}
+		
+		for(int x = Posicion.values().length ; x > 0; x--)
+		{
+			Posicion posicionActual = Posicion.values()[x]; 
 			List<Jugador> jugPorPosicion = new ArrayList<Jugador>();
 			jugadores.stream().filter(j -> j.juegaDe(posicionActual)).forEach(j -> jugPorPosicion.add(j));
 			System.out.println(jugPorPosicion.get(0).getNombre());
 		}
 		return equipoIdeal;		
 	}
+	
+	
 	
 }

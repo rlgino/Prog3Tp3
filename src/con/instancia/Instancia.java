@@ -29,7 +29,7 @@ public class Instancia {
 	// Acceso O(1) a un objeto
 	public Jugador getJuador(int i) {
 		if (i < 0 || i >= tamano())
-			throw new IllegalArgumentException("Se consult� un objeto inexistente! i = " + i);
+			throw new IllegalArgumentException("Se consulto un objeto inexistente! i = " + i);
 
 		return jugadores.get(i);
 	}

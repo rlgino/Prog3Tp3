@@ -68,9 +68,9 @@ public class MainForm {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JList<String> jugadoresList = new JList<String>();
+		JList<Jugador> jugadoresList = new JList<Jugador>();
 		jugadoresList.setBounds(543, 61, 230, 470);
-		jugadoresList.setListData(controlador.getNombresDeJugadores());
+		jugadoresList.setListData(controlador.obtenerJugadores());
 		frame.getContentPane().add(jugadoresList);
 
 		JLabel lblNombre = new JLabel("Nombre:");
@@ -131,7 +131,7 @@ public class MainForm {
 		for (int x = 0; x < Pais.values().length; x++)
 			nacionalidadCmb.addItem(Pais.values()[x]);
 		frame.getContentPane().add(nacionalidadCmb);
-				
+
 		JList<Posicion> posicionesList = new JList<Posicion>();
 		posicionesList.setListData(Posicion.values());
 		posicionesList.setBounds(117, 204, 130, 245);
@@ -146,8 +146,10 @@ public class MainForm {
 		btnAgregar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Jugador jugador = new Jugador();
 				String nombre = nombreTxt.getText();
+				Jugador jugador = controlador.obtenerJugador(nombre);
+				if (jugador == null)
+					jugador = new Jugador();
 				int goles = Integer.parseInt(golesTxt.getText());
 				int tarjetas = Integer.parseInt(tarjetasTxt.getText());
 				int faltas = Integer.parseInt(faltasTxt.getText());
@@ -159,23 +161,23 @@ public class MainForm {
 				jugador.setCantFaltas(faltas);
 				jugador.setCantTarjetas(tarjetas);
 				jugador.setPromedio(puntaje);
-				jugador.setPosicionPrincipal(0);
 				jugador.setNacionalidad(nacionalidad);
-				for(Posicion p : posicionesList.getSelectedValuesList())
-					jugador.agregarPosicion(p);
+				if (posicionesList.isEnabled()) {
+					for (Posicion p : posicionesList.getSelectedValuesList())
+						jugador.agregarPosicion(p);
+				}
 
-				
 				nombreTxt.setText("");
 				golesTxt.setText("");
 				tarjetasTxt.setText("");
 				faltasTxt.setText("");
 				puntajeTxt.setText("");
 				nacionalidadCmb.setSelectedItem(Pais.ARGENTINA);
-				posicionesList.clearSelection();
-				
+				posicionesList.setListData(Posicion.values());
+
 				controlador.agregarJugador(jugador);
 
-				jugadoresList.setListData(controlador.getNombresDeJugadores());
+				jugadoresList.setListData(controlador.obtenerJugadores());
 			}
 		});
 		btnAgregar.setBounds(363, 420, 117, 29);
@@ -195,5 +197,25 @@ public class MainForm {
 		lblJugadoresCargados.setFont(new Font("Helvetica", Font.BOLD, 20));
 		lblJugadoresCargados.setBounds(543, 26, 230, 23);
 		frame.getContentPane().add(lblJugadoresCargados);
+
+		jugadoresList.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Jugador seleccionado = jugadoresList.getSelectedValue();
+				nombreTxt.setText(seleccionado.getNombre());
+				golesTxt.setText(Integer.toString(seleccionado.getGoles()));
+				tarjetasTxt.setText(Integer.toString(seleccionado.getCantTarjetas()));
+				faltasTxt.setText(Integer.toString(seleccionado.getCantFaltas()));
+				puntajeTxt.setText(Double.toString(seleccionado.getPromedio()));
+				nacionalidadCmb.setSelectedItem(seleccionado.getNacionalidad());
+				Posicion[] pos = new Posicion[seleccionado.getPosiciones().size()];
+				int x = 0;
+				for (Posicion p : seleccionado.getPosiciones())
+					pos[x++] = p;
+				posicionesList.setListData(pos);
+				posicionesList.setEnabled(false);
+				;
+			}
+		});
 	}
 }
