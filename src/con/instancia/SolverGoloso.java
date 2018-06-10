@@ -18,77 +18,50 @@ public class SolverGoloso {
 		_random = new Random();
 	}
 
-	public Conjunto resolver() {
-		Conjunto ret = new Conjunto();
-		List<Jugador> ordenados = ordenarJugadores();
-
-		List<Jugador> jugPorPosicion = new ArrayList<Jugador>();
-		ordenados.stream().forEach(j -> jugPorPosicion.add(j));
-		while (ret.tamano() < 11 && !jugPorPosicion.isEmpty()) {
-			Jugador jugadorActual = jugPorPosicion.get(guess(jugPorPosicion.size()));
-			for (Posicion posicionActual : jugadorActual.getPosiciones()) {
-				if (ret.obtenerJugador(posicionActual) == null && puedeSerIncluido(jugadorActual, ret)) {
-					agregarJugador(jugadorActual, posicionActual, ret);
-					break;
-				}
-			}
-			jugPorPosicion.remove(jugadorActual);
-		}
-
-		return ret;
-	}
-
 	private int guess(int t) {
 		int i = _random.nextInt(t < 1 ? 1 : t);
 		return i;
 	}
 
-	public Conjunto resolverPorJugador() {
+	public Conjunto resolver() {
 		Conjunto ret = new Conjunto();
 		List<Jugador> ordenados = ordenarJugadores();
+		List<Posicion> posicionesClone = new ArrayList<Posicion>();
+		
+		for (Posicion p : Posicion.values())
+			posicionesClone.add(p);
 
-		// Poner Jugadores en posiciones que solo hay un solo jugador
-		for (Posicion posicionActual : Posicion.values()) {
+		while (!posicionesClone.isEmpty()) {
+			Posicion posicionActual = posicionesClone.get(guess(posicionesClone.size()));
+
 			List<Jugador> jugPorPosicion = new ArrayList<Jugador>();
 			ordenados.stream().filter(j -> j.juegaDe(posicionActual)).forEach(j -> jugPorPosicion.add(j));
-			if (jugPorPosicion.size() == 1) {
-				agregarJugador(jugPorPosicion.get(0), posicionActual, ret);
-			}
-		}
-
-		// Poner Jugadores que juegan en solo una posicion
-
-		List<Jugador> jugUnicaPosicion = new ArrayList<Jugador>();
-		ordenados.stream().filter(j -> j.getPosiciones().size() == 1).forEach(j -> jugUnicaPosicion.add(j));
-		for (Jugador j : jugUnicaPosicion) {
-			if (puedeSerIncluido(j, ret)) {
-				agregarJugador(j, j.getPosiciones().get(0), ret);
-				break;
-			}
-		}
-
-		// Lo que falta
-		for (Posicion posicionActual : Posicion.values())
-			if (ret.obtenerJugador(posicionActual) == null) {
-				List<Jugador> jugPorPosicion = new ArrayList<Jugador>();
-				ordenados.stream().filter(j -> j.juegaDe(posicionActual)).forEach(j -> jugPorPosicion.add(j));
-				for (Jugador j : jugPorPosicion) {
-					if (puedeSerIncluido(j, ret)) {
-						agregarJugador(j, posicionActual, ret);
-						break;
-					}
+			for (Jugador j : jugPorPosicion) {
+				if (puedeSerIncluido(j, ret)) {
+					agregarJugador(j, posicionActual, ret);
+					break;
 				}
-
+				posicionesClone.remove(posicionActual);
 			}
 
+		}
 		return ret;
 	}
 
 	private boolean puedeSerIncluido(Jugador j, Conjunto ret) {
-		if (ret.contiene(j) || ret.esLimiteAmarilla() || ret.esLimiteSinGoles()) {
+		if (ret.contiene(j)) {
+			return false;
+		}
+		if (j.getCantTarjetas() > 0 && ret.esLimiteAmarilla()) {
+			System.out.println(j.getNombre() + " Limite de tarjetas");
+			return false;
+		}
+		if (j.getGoles() == 0 && ret.esLimiteSinGoles()) {
+			System.out.println(j.getNombre() + " Limite sin goles");
 			return false;
 		}
 		if (ret.esLimitePorPais(j.getNacionalidad().getId())) {
+			System.out.println(j.getNombre() + " Limite por pais");
 			return false;
 		}
 		return true;

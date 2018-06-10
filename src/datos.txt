@@ -136,17 +136,6 @@
     },
     {
       "posiciones": [
-        "PUNTERO_DERECHO"
-      ],
-      "goles": 4,
-      "nombre": "Lionel Messi",
-      "cantFaltas": 0,
-      "cantTarjetas": 0,
-      "nacionalidad": "ARGENTINA",
-      "promedio": 9.0
-    },
-    {
-      "posiciones": [
         "PUNTERO_IZQUIERDO",
         "CENTRO_DELANTERO"
       ],
@@ -159,19 +148,8 @@
     },
     {
       "posiciones": [
-        "CENTRO_DELANTERO"
-      ],
-      "goles": 9,
-      "nombre": "Benzema",
-      "cantFaltas": 0,
-      "cantTarjetas": 1,
-      "nacionalidad": "FRANCIA",
-      "promedio": 8.0
-    },
-    {
-      "posiciones": [
         "LATERAL_IZQUIERDO"
-        ],
+      ],
       "goles": 3,
       "nombre": "Marcelo",
       "cantFaltas": 1,
@@ -189,6 +167,39 @@
       "cantTarjetas": 0,
       "nacionalidad": "HOLANDA",
       "promedio": 7.0
+    },
+    {
+      "posiciones": [
+        "PUNTERO_DERECHO"
+      ],
+      "goles": 6,
+      "nombre": "Lionel Messi",
+      "cantFaltas": 0,
+      "cantTarjetas": 0,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 9.0
+    },
+    {
+      "posiciones": [
+        "CENTRO_DELANTERO"
+      ],
+      "goles": 9,
+      "nombre": "Benzema",
+      "cantFaltas": 0,
+      "cantTarjetas": 0,
+      "nacionalidad": "FRANCIA",
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
+        "VOLANTE_DERECHO"
+      ],
+      "goles": 3,
+      "nombre": "Paulinho",
+      "cantFaltas": 1,
+      "cantTarjetas": 1,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 9.0
     }
   ]
 }

@@ -68,7 +68,7 @@ public class Conjunto {
 	}
 
 	public boolean esLimitePorPais(int id) {
-		return contPais[id] == LIMITE_PAIS;
+		return contPais[id] + 1 == LIMITE_PAIS;
 	}
 
 	@SuppressWarnings("unchecked")

@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,9 +18,6 @@ public class EquipoIdealForm {
 
 	private JFrame frame;
 	HashMap<Posicion, Jugador> resultado ;
-	boolean limiteAmarillas = false;
-	boolean limiteSinGoles = false;
-	boolean limitePorPais = false;
 
 
 	/**
@@ -57,12 +55,12 @@ public class EquipoIdealForm {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(200, 200, 450, 300);
+		frame.setBounds(200, 200, 697, 312);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JButton cerrarBtn = new JButton("Cerrar");
-		cerrarBtn.setBounds(0, 0, 100, 50);
+		cerrarBtn.setBounds(0, 0, 100, 29);
 		cerrarBtn.addActionListener(new ActionListener(){
 
 			@Override
@@ -116,6 +114,21 @@ public class EquipoIdealForm {
 		JLabel lblDelantero9 = new JLabel("Delantero");
 		lblDelantero9.setBounds(174, 220, 100, 16);
 		frame.getContentPane().add(lblDelantero9);
+		
+		JLabel amarillasLbl = new JLabel("Limite por pais alcanzado");
+		amarillasLbl.setForeground(Color.RED);
+		amarillasLbl.setBounds(450, 25, 201, 16);
+		frame.getContentPane().add(amarillasLbl);
+		
+		JLabel paisesLbl = new JLabel("Limite de amarillas alcanzado");
+		paisesLbl.setForeground(Color.RED);
+		paisesLbl.setBounds(450, 80, 201, 16);
+		frame.getContentPane().add(paisesLbl);
+		
+		JLabel sinGolesLbl = new JLabel("Limite sin goles alcanzado");
+		sinGolesLbl.setForeground(Color.RED);
+		sinGolesLbl.setBounds(450, 147, 201, 16);
+		frame.getContentPane().add(sinGolesLbl);
 		
 
 		if(resultado.get(Posicion.ARQUERO) == null) lblArquero.setText("");
