@@ -1,4 +1,4 @@
-package con.instancia;
+package algoritmos;
 
 import java.util.HashMap;
 

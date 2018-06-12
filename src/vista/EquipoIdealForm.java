@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import con.instancia.Conjunto;
+import algoritmos.Conjunto;
 import enums.Posicion;
 import modelo.Jugador;
 

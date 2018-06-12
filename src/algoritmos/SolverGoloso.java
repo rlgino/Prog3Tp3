@@ -1,21 +1,20 @@
-package con.instancia;
+package algoritmos;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
-
 import enums.Posicion;
+import generadores.Generador;
 import modelo.Jugador;
 
 public class SolverGoloso {
 
 	private Instancia instancia;
-	private Random _random;
+	private Generador _random;
 
-	public SolverGoloso(Instancia instancia) {
+	public SolverGoloso(Instancia instancia, Generador generador) {
 		this.instancia = instancia;
-		_random = new Random();
+		_random = generador;
 	}
 
 	private int guess(int t) {

@@ -3,9 +3,10 @@ package controlador;
 import java.util.ArrayList;
 import java.util.List;
 
-import con.instancia.Conjunto;
-import con.instancia.Instancia;
-import con.instancia.SolverGoloso;
+import algoritmos.Conjunto;
+import algoritmos.Instancia;
+import algoritmos.SolverGoloso;
+import generadores.GeneradorAleatorio;
 import modelo.Jugador;
 
 public class Controlador {
@@ -45,7 +46,7 @@ public class Controlador {
 	}
 
 	public Conjunto seleccionarEquipo() {
-		SolverGoloso solver = new SolverGoloso(new Instancia((ArrayList<Jugador>) jugadores));
+		SolverGoloso solver = new SolverGoloso(new Instancia((ArrayList<Jugador>) jugadores), new GeneradorAleatorio());
 		Conjunto sol = solver.resolver();
 		return sol;
 	}
