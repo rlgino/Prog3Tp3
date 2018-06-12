@@ -47,69 +47,6 @@ public class ControladorTest {
 		assertTrue(controlador.obtenerJugadores().length == 11);
 		assertTrue(resultado.esLimiteAmarilla());
 	}
-	
-	@Test
-	public void equipoCompletoTest() {
-		//Exercise
-		for (int x = 0; x < posiciones.length; x++) {
-			Jugador jugador = new Jugador();
-			jugador.setNombre("jugador" + x);
-			jugador.setGoles(x);
-			jugador.setCantFaltas(0);
-			jugador.setCantTarjetas(0);
-			jugador.setPromedio(x);
-			jugador.setNacionalidad(Pais.values()[x]);
-			jugador.agregarPosicion(posiciones[x]);
-			controlador.agregarJugador(jugador);
-		}
-
-		//Verify
-		Conjunto resultado = controlador.seleccionarEquipo();
-		assertTrue(controlador.obtenerJugadores().length == 11);
-		assertFalse(resultado.esLimiteAmarilla());
-		assertFalse(resultado.esLimiteSinGoles());
-	}
-
-	
-	@Test
-	public void equipoLimiteAmarillaTest() {
-		//Exercise
-		for (int x = 0; x < posiciones.length; x++) {
-			Jugador jugador = new Jugador();
-			jugador.setNombre("jugador" + x);
-			jugador.setGoles(x);
-			jugador.setCantFaltas(0);
-			jugador.setCantTarjetas(1);
-			jugador.setPromedio(x);
-			jugador.setNacionalidad(Pais.values()[x]);
-			jugador.agregarPosicion(posiciones[x]);
-			controlador.agregarJugador(jugador);
-		}
-
-		//Verify
-		Conjunto resultado = controlador.seleccionarEquipo();
-		assertEquals(resultado.obtenerJugadores().size(), Conjunto.LIMITE_AMARILLAS );
-	}
-
-	@Test
-	public void equipoLimiteSinGolesTest() {
-		//Exercise
-		for (int x = 0; x < posiciones.length; x++) {
-			Jugador jugador = new Jugador();
-			jugador.setNombre("jugador" + x);
-			jugador.setGoles(0);
-			jugador.setCantFaltas(0);
-			jugador.setCantTarjetas(1);
-			jugador.setPromedio(x);
-			jugador.setNacionalidad(Pais.values()[x]);
-			jugador.agregarPosicion(posiciones[x]);
-			controlador.agregarJugador(jugador);
-		}
-
-		//Verify
-		Conjunto resultado = controlador.seleccionarEquipo();
-		assertEquals(resultado.obtenerJugadores().size(), Conjunto.LIMITE_SIN_GOLES );
-	}
 
 	@After
 	public void despuesDelTest() {

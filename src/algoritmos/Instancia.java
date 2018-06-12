@@ -18,7 +18,7 @@ public class Instancia {
 		this.jugadores = jugadores;
 	}
 
-	public void agregar(Jugador jugador) {
+	public void agregarJugador(Jugador jugador) {
 		jugadores.add(jugador);
 	}
 

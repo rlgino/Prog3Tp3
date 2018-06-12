@@ -17,8 +17,8 @@ public class Controlador {
 	
 	//----------------Contructores---------------
 	public Controlador(){
-		Jugadores j = new Jugadores();
-		jugadores = j.levantarDatos();
+		Jugadores archivo = new Jugadores();
+		this.jugadores = archivo.levantarDatos();
 	}
 
 	//----------------Getters--------------------

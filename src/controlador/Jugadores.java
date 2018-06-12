@@ -24,7 +24,6 @@ public class Jugadores {
 			BufferedReader br = new BufferedReader(new FileReader(Controlador.PATH));
 			ret = (Jugadores) json.fromJson(br, this.getClass());
 		} catch (FileNotFoundException e) {
-			System.out.println("No se encontro archivo");
 			return new ArrayList<Jugador>();
 		}
 		return ret.jugadores;
