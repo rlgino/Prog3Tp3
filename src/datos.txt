@@ -200,6 +200,26 @@
       "cantTarjetas": 0,
       "nacionalidad": "ARGENTINA",
       "promedio": 9.0
+    },
+    {
+      "posiciones": [
+        "VOLANTE_CENTRAL"
+      ],
+      "goles": 0,
+      "nombre": "Jugador 1",
+      "cantFaltas": 0,
+      "cantTarjetas": 0,
+      "nacionalidad": "ALEMANIA",
+      "promedio": 2.0
+    },
+    {
+      "posiciones": [],
+      "goles": 7,
+      "nombre": "Messi",
+      "cantFaltas": 1,
+      "cantTarjetas": 0,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 9.5
     }
   ]
 }

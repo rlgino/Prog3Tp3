@@ -83,4 +83,11 @@ public class Conjunto {
 	public boolean estaCompleto() {
 		return jugadoresPorPosicion.size() == 11;
 	}
+
+	public Double promedioEquipo() {
+		double acumulador = 0;
+		for(Jugador j : jugadoresPorPosicion.values())
+			acumulador += j.getCoeficiente();
+		return acumulador/jugadoresPorPosicion.size();
+	}
 }

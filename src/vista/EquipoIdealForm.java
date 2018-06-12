@@ -92,6 +92,11 @@ public class EquipoIdealForm {
 		JLabel lblDelantero9 = new JLabel("Delantero");
 		lblDelantero9.setBounds(174, 220, 100, 16);
 		frame.getContentPane().add(lblDelantero9);
+		
+		JLabel lblPromedio = new JLabel(String.format("%.2f",conjunto.promedioEquipo()));
+		lblPromedio.setForeground(Color.MAGENTA);
+		lblPromedio.setBounds(450, 92, 201, 16);
+		frame.getContentPane().add(lblPromedio);
 
 		JLabel amarillasLbl = new JLabel("Limite de amarillas alcanzado");
 		amarillasLbl.setForeground(Color.RED);
