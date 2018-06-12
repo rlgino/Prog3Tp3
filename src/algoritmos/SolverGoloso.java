@@ -27,17 +27,17 @@ public class SolverGoloso {
 		List<Jugador> ordenados = ordenarJugadores();
 		List<Posicion> posicionesClone = new ArrayList<Posicion>();
 		
-		for (Posicion p : Posicion.values())
-			posicionesClone.add(p);
+		for (Posicion posicion : Posicion.values())
+			posicionesClone.add(posicion);
 
 		while (!posicionesClone.isEmpty()) {
 			Posicion posicionActual = posicionesClone.get(guess(posicionesClone.size()));
 
 			List<Jugador> jugPorPosicion = new ArrayList<Jugador>();
 			ordenados.stream().filter(j -> j.juegaDe(posicionActual)).forEach(j -> jugPorPosicion.add(j));
-			for (Jugador j : jugPorPosicion) {
-				if (puedeSerIncluido(j, ret)) {
-					agregarJugador(j, posicionActual, ret);
+			for (Jugador jugador : jugPorPosicion) {
+				if (puedeSerIncluido(jugador, ret)) {
+					ret.agregar(jugador, posicionActual);
 					break;
 				}
 				posicionesClone.remove(posicionActual);
@@ -47,27 +47,20 @@ public class SolverGoloso {
 		return ret;
 	}
 
-	private boolean puedeSerIncluido(Jugador j, Conjunto ret) {
-		if (ret.contiene(j)) {
+	private boolean puedeSerIncluido(Jugador jugador, Conjunto conjunto) {
+		if (conjunto.contiene(jugador)) {
 			return false;
 		}
-		if (j.getCantTarjetas() > 0 && ret.esLimiteAmarilla()) {
-			System.out.println(j.getNombre() + " Limite de tarjetas");
+		if (jugador.getCantTarjetas() > 0 && conjunto.esLimiteAmarilla()) {
 			return false;
 		}
-		if (j.getGoles() == 0 && ret.esLimiteSinGoles()) {
-			System.out.println(j.getNombre() + " Limite sin goles");
+		if (jugador.getGoles() == 0 && conjunto.esLimiteSinGoles()) {
 			return false;
 		}
-		if (ret.esLimitePorPais(j.getNacionalidad().getId())) {
-			System.out.println(j.getNombre() + " Limite por pais");
+		if (conjunto.esLimitePorPais(jugador.getNacionalidad().getId())) {
 			return false;
 		}
 		return true;
-	}
-
-	private void agregarJugador(Jugador j, Posicion p, Conjunto ret) {
-		ret.agregar(j, p);
 	}
 
 	private List<Jugador> ordenarJugadores() {

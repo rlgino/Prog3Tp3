@@ -187,7 +187,7 @@ public class MainForm {
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EquipoIdealForm form = new EquipoIdealForm(controlador.seleccionarEquipo());
-				form.cargar();
+				form.mostrar();
 			}
 		});
 		btnCalcular.setBounds(803, 26, 117, 29);

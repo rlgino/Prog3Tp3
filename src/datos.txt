@@ -13,56 +13,6 @@
     },
     {
       "posiciones": [
-        "LATERAL_DERECHO",
-        "VOLANTE_CENTRAL",
-        "VOLANTE_DERECHO"
-      ],
-      "goles": 0,
-      "nombre": "Phillip Lahm",
-      "cantFaltas": 9,
-      "cantTarjetas": 1,
-      "nacionalidad": "ALEMANIA",
-      "promedio": 9.0
-    },
-    {
-      "posiciones": [
-        "PRIMER_CENTRAL",
-        "SEGUNDO_CENTRAL"
-      ],
-      "goles": 0,
-      "nombre": "Garay",
-      "cantFaltas": 5,
-      "cantTarjetas": 1,
-      "nacionalidad": "ARGENTINA",
-      "promedio": 8.0
-    },
-    {
-      "posiciones": [
-        "PRIMER_CENTRAL",
-        "SEGUNDO_CENTRAL",
-        "VOLANTE_CENTRAL"
-      ],
-      "goles": 2,
-      "nombre": "David Luiz",
-      "cantFaltas": 4,
-      "cantTarjetas": 3,
-      "nacionalidad": "BRASIL",
-      "promedio": 7.0
-    },
-    {
-      "posiciones": [
-        "SEGUNDO_CENTRAL",
-        "LATERAL_IZQUIERDO"
-      ],
-      "goles": 1,
-      "nombre": "Rojo",
-      "cantFaltas": 5,
-      "cantTarjetas": 1,
-      "nacionalidad": "ARGENTINA",
-      "promedio": 8.0
-    },
-    {
-      "posiciones": [
         "VOLANTE_CENTRAL",
         "VOLANTE_DERECHO"
       ],
@@ -72,42 +22,6 @@
       "cantTarjetas": 0,
       "nacionalidad": "ALEMANIA",
       "promedio": 9.0
-    },
-    {
-      "posiciones": [
-        "VOLANTE_CENTRAL"
-      ],
-      "goles": 0,
-      "nombre": "Mascherano",
-      "cantFaltas": 3,
-      "cantTarjetas": 1,
-      "nacionalidad": "ARGENTINA",
-      "promedio": 8.0
-    },
-    {
-      "posiciones": [
-        "VOLANTE_IZQUIERDO",
-        "VOLANTE_CENTRAL",
-        "VOLANTE_DERECHO"
-      ],
-      "goles": 3,
-      "nombre": "TONI KROOS",
-      "cantFaltas": 1,
-      "cantTarjetas": 1,
-      "nacionalidad": "ALEMANIA",
-      "promedio": 9.0
-    },
-    {
-      "posiciones": [
-        "PUNTERO_IZQUIERDO",
-        "PUNTERO_DERECHO"
-      ],
-      "goles": 6,
-      "nombre": "JAMES RODRIGUEZ ",
-      "cantFaltas": 0,
-      "cantTarjetas": 1,
-      "nacionalidad": "COLOMBIA",
-      "promedio": 8.0
     },
     {
       "posiciones": [
@@ -148,17 +62,6 @@
     },
     {
       "posiciones": [
-        "LATERAL_IZQUIERDO"
-      ],
-      "goles": 3,
-      "nombre": "Marcelo",
-      "cantFaltas": 1,
-      "cantTarjetas": 1,
-      "nacionalidad": "BRASIL",
-      "promedio": 8.0
-    },
-    {
-      "posiciones": [
         "ARQUERO"
       ],
       "goles": -6,
@@ -192,12 +95,109 @@
     },
     {
       "posiciones": [
+        "LATERAL_DERECHO",
+        "VOLANTE_CENTRAL",
+        "VOLANTE_DERECHO"
+      ],
+      "goles": 0,
+      "nombre": "Phillip Lahm",
+      "cantFaltas": 9,
+      "cantTarjetas": 0,
+      "nacionalidad": "ALEMANIA",
+      "promedio": 9.0
+    },
+    {
+      "posiciones": [
+        "PRIMER_CENTRAL",
+        "SEGUNDO_CENTRAL"
+      ],
+      "goles": 0,
+      "nombre": "Garay",
+      "cantFaltas": 5,
+      "cantTarjetas": 0,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
+        "PRIMER_CENTRAL",
+        "SEGUNDO_CENTRAL",
+        "VOLANTE_CENTRAL"
+      ],
+      "goles": 2,
+      "nombre": "David Luiz",
+      "cantFaltas": 4,
+      "cantTarjetas": 0,
+      "nacionalidad": "BRASIL",
+      "promedio": 7.0
+    },
+    {
+      "posiciones": [
+        "SEGUNDO_CENTRAL",
+        "LATERAL_IZQUIERDO"
+      ],
+      "goles": 1,
+      "nombre": "Rojo",
+      "cantFaltas": 5,
+      "cantTarjetas": 0,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
+        "VOLANTE_CENTRAL"
+      ],
+      "goles": 0,
+      "nombre": "Mascherano",
+      "cantFaltas": 3,
+      "cantTarjetas": 0,
+      "nacionalidad": "ARGENTINA",
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
+        "VOLANTE_IZQUIERDO",
+        "VOLANTE_CENTRAL",
+        "VOLANTE_DERECHO"
+      ],
+      "goles": 3,
+      "nombre": "TONI KROOS",
+      "cantFaltas": 1,
+      "cantTarjetas": 0,
+      "nacionalidad": "ALEMANIA",
+      "promedio": 9.0
+    },
+    {
+      "posiciones": [
+        "PUNTERO_IZQUIERDO",
+        "PUNTERO_DERECHO"
+      ],
+      "goles": 6,
+      "nombre": "JAMES RODRIGUEZ ",
+      "cantFaltas": 0,
+      "cantTarjetas": 0,
+      "nacionalidad": "COLOMBIA",
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
+        "LATERAL_IZQUIERDO"
+      ],
+      "goles": 3,
+      "nombre": "Marcelo",
+      "cantFaltas": 1,
+      "cantTarjetas": 0,
+      "nacionalidad": "BRASIL",
+      "promedio": 8.0
+    },
+    {
+      "posiciones": [
         "VOLANTE_DERECHO"
       ],
       "goles": 3,
       "nombre": "Paulinho",
       "cantFaltas": 1,
-      "cantTarjetas": 1,
+      "cantTarjetas": 0,
       "nacionalidad": "ARGENTINA",
       "promedio": 9.0
     }

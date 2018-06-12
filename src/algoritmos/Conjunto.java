@@ -8,9 +8,9 @@ import modelo.Jugador;
 
 public class Conjunto {
 	// --------------Constantes-----------
-	private final int LIMITE_SIN_GOLES = 5;
-	private final int LIMITE_AMARILLAS = 5;
-	private final int LIMITE_PAIS = 4;
+	public static final int LIMITE_SIN_GOLES = 5;
+	public static final int LIMITE_AMARILLAS = 5;
+	public static final int LIMITE_PAIS = 4;
 
 	private HashMap<Posicion, Jugador> jugadoresPorPosicion;
 	private int[] contPais;
@@ -35,7 +35,11 @@ public class Conjunto {
 		return contPais[i];
 	}
 
-	// ---------------Juadores
+	public boolean esLimitePorPais(int id) {
+		return contPais[id] == LIMITE_PAIS;
+	}
+
+	// ---------------Juadores------------
 
 	public void agregar(Jugador jugador, Posicion posicion) {
 		if (jugador.getGoles() == 0)
@@ -65,10 +69,6 @@ public class Conjunto {
 
 	public int tamano() {
 		return jugadoresPorPosicion.size();
-	}
-
-	public boolean esLimitePorPais(int id) {
-		return contPais[id] + 1 == LIMITE_PAIS;
 	}
 
 	@SuppressWarnings("unchecked")
